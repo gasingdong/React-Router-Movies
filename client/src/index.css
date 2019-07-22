@@ -16,6 +16,19 @@ body {
   margin: 1rem auto;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+.activeNavButton {
+  text-decoration: underline;
+}
+
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
@@ -64,6 +77,12 @@ body {
 .save-button:hover {
   background-color: green;
   color: white;
+}
+.remove-button {
+  background-color: red;
+}
+.remove-button:hover {
+  background-color: darkred;
 }
 
 .home-button {
