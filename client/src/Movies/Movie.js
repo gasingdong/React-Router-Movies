@@ -33,9 +33,18 @@ const Movie = props => {
   return (
     <div className="save-wrapper">
       <MovieCard movie={movie} />
-      <div className="save-button" onClick={() => props.clickHandler(movie)}>
-        Save
-      </div>
+      {props.savedList.find(el => el.id === movie.id) ? (
+        <div className="save-button">Saved</div>
+      ) : (
+        <div
+          className="save-button"
+          onClick={() => {
+            props.clickHandler(movie);
+          }}
+        >
+          Save
+        </div>
+      )}
     </div>
   );
 };
