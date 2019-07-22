@@ -25,6 +25,10 @@ a:visited {
   color: black;
 }
 
+.activeNavButton {
+  text-decoration: underline;
+}
+
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
