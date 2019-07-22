@@ -21,10 +21,10 @@ const Movie = props => {
   }, [props.match.params.id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  // const saveMovie = () => {
-  //   const addToSavedList = props.addToSavedList;
-  //   addToSavedList(movie)
-  // }
+  const saveMovie = props => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(movie);
+  };
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -36,12 +36,7 @@ const Movie = props => {
       {props.savedList.find(el => el.id === movie.id) ? (
         <div className="save-button">Saved</div>
       ) : (
-        <div
-          className="save-button"
-          onClick={() => {
-            props.clickHandler(movie);
-          }}
-        >
+        <div className="save-button" onClick={() => saveMovie(props)}>
           Save
         </div>
       )}
