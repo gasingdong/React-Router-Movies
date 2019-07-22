@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import SavedList from './Movies/SavedList';
-import MoviesList from './Movies/MovieList';
+import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <Route exact path="/" component={MoviesList} />
+      <Route exact path="/" component={MovieList} />
       <Route path="/movies/:id" component={Movie} />
     </div>
   );
