@@ -26,6 +26,11 @@ const Movie = props => {
     addToSavedList(movie);
   };
 
+  const removeMovie = props => {
+    const removeFromSavedList = props.removeFromSavedList;
+    removeFromSavedList(movie);
+  };
+
   if (!movie) {
     return <div>Loading movie information...</div>;
   }
@@ -34,7 +39,12 @@ const Movie = props => {
     <div className="save-wrapper">
       <MovieCard movie={movie} />
       {props.savedList.find(el => el.id === movie.id) ? (
-        <div className="save-button">Saved</div>
+        <div
+          className="save-button remove-button"
+          onClick={() => removeMovie(props)}
+        >
+          Remove
+        </div>
       ) : (
         <div className="save-button" onClick={() => saveMovie(props)}>
           Save

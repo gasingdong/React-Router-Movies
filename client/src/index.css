@@ -78,6 +78,12 @@ a:visited {
   background-color: green;
   color: white;
 }
+.remove-button {
+  background-color: red;
+}
+.remove-button:hover {
+  background-color: darkred;
+}
 
 .home-button {
   padding: 5px 10px;

@@ -11,6 +11,10 @@ const App = () => {
     setSavedList([...savedList, movie]);
   };
 
+  const removeFromSavedList = movie => {
+    setSavedList(savedList.filter(el => el.id !== movie.id));
+  };
+
   return (
     <div>
       <SavedList list={savedList} />
@@ -22,6 +26,7 @@ const App = () => {
             {...props}
             savedList={savedList}
             addToSavedList={addToSavedList}
+            removeFromSavedList={removeFromSavedList}
           />
         )}
       />
